@@ -1,0 +1,53 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 0.03em;
+    color: var(--main-text-color);
+    background-color: var(--main-bg-color);
+}
+
+.container {
+    max-width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+    @include mobile {
+        max-width: 480px;
+    }
+    @include tablet {
+         max-width: 768px;  
+    }       
+    @include desktop {
+        max-width: 1200px;
+    }
+}
+
+.link {
+    transition: color var(--tr-dtf), fill var(--tr-dtf), background-color var(--tr-dtf), border-color var(--tr-dtf);
+    &:hover,
+    &:focus {
+        color: var(--accent-color);
+    }
+}
+
+.section {
+    padding: 60px 0;
+    @include desktop {
+        padding: 94px 0;
+        &.feature {
+            padding-bottom: 0;
+        }
+    }
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.title {
+    color: var(--title-color);
+}
+
+.no-scroll {
+    overflow: hidden;
+}

@@ -1,0 +1,218 @@
+.header {
+    border-bottom: 1px solid var(--header-border-color);
+}
+
+.header__container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header__logo {
+    padding: 24px 0 25px;
+    margin-right: 88px;
+    @include desktop {
+        margin-right: 93px;
+    }
+}
+
+.menu.is-hidden .menu__container {
+    transform: translateX(200px) scale(1);
+    
+}
+.menu__container {
+transition: transform 350ms linear;
+}
+
+.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+} 
+
+.menu {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--main-bg-color);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 2px 4px rgba(0, 0, 0, 0.08), 0px 1px 3px rgba(0, 0, 0, 0.16);
+    padding: 48px 40px;
+    @include tablet {
+        display: none;
+    }
+    transition: opacity 250ms linear, visibility 250ms linear;
+}
+
+.menu__container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: auto;
+    overflow: auto;
+}
+
+.menu-open, .menu-close {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    right: 8px;
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    transition: fill var(--tr-dtf);
+    @include tablet{
+        display: none;
+    }
+}
+
+.menu-close {position: absolute;
+    left: 15; top: 10px;
+    margin-left: auto;
+}
+
+.menu-open__icon, .menu-close__icon {
+    fill: var(--title-color);
+    transition: color var(--tr-dtf);
+    .menu-open:focus &, .menu-close:focus & {
+        fill: var(--accent-color);
+    } 
+}
+
+.menu-close__icon {
+    width: 18.67px;
+    height: 18.67px;
+}
+
+.mob-nav__list, .mob-contacts__list {
+    display: flex;
+    gap: 32px;
+    flex-direction: column;
+    margin-bottom: auto;
+}
+
+.mob-nav__list {
+    margin-bottom: auto;
+}
+
+.mob-nav__link {
+    @include font(500, 40px, 1.18);
+    letter-spacing: 0.02em;
+    color: var(--title-color);
+    &:focus {
+        color: var(--accent-color);
+    }
+}
+
+.mob-contacts__list {
+     margin-bottom: 64px;
+} 
+
+.mob-contacts__tel {
+    @include font(500, 34px, 1.18);
+    letter-spacing: 0.02em;
+    color: var(--accent-color);
+}
+
+.mob-contacts__mail {
+    color: var(--main-text-color);
+    @include font(500, 24px, 1.17);
+    letter-spacing: 0.02em;
+}
+
+.mob-soc {
+    display: flex;
+    gap: 5px;
+}
+
+.mob-soc__link {
+    @include font(500, 18px, 1.22);
+    letter-spacing: 0.02em;
+    color: var(--accent-color);
+    margin-right: 5px;
+}
+
+.mob-soc__item:not(:last-child) {
+    border-right: 1px solid rgba(33, 33, 33, 0.2);
+}
+
+.nav, .header__contacts {
+    display: none;
+    @include tablet {
+        display: block;
+    }
+}
+
+.nav__list {
+    display: flex;
+    gap: 51px;
+    margin-right: 96px;
+    @include desktop {
+        margin-right: 305px;
+    }
+}
+
+.nav__link {
+    @include font(500, 14px, 1.14);
+    letter-spacing: 0.02em;
+    padding: 32px 0 32px;
+    color: var(--title-color);
+} 
+
+.nav__item {
+    position: relative;
+    display: flex;
+}
+
+.current::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: var(--accent-color);
+    border-radius: 2px;
+}
+
+.logo__web, .nav__link.current {
+    color: var(--accent-color);
+}
+
+.contacts__link {
+    display: flex;
+    align-items: center;
+    color: var(--main-text-color);
+    @include font(500, 12px, 1.17);
+    letter-spacing: 0.02em;
+    padding: 0;
+    @include desktop {
+        padding: 32px 0 32px;
+        @include font(500, 14px, 1.14);
+    }
+}
+
+.contacts__list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    @include desktop {
+        flex-direction: row;
+        gap: 40px;
+    }
+}
+
+.contacts__icon {
+    margin-right: 8px;
+    fill: currentColor;
+    @include desktop {
+        margin-right: 10px;
+    }
+}

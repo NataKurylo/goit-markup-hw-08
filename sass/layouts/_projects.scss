@@ -1,0 +1,96 @@
+.filter-list {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    column-gap: 8px;
+    row-gap: 15px;
+    margin-bottom: 40px;
+    @include tablet {
+        margin-bottom: 30px;
+        justify-content: center;
+    }
+    @include desktop {
+        margin-bottom: 50px;
+    }
+}
+.filter-btn {
+    cursor: pointer;
+    padding: 6px 22px;
+    @include font(500, 16px, 1.62);
+    letter-spacing: 0.03em;
+    color: var(--title-color);
+    background-color: var(--secondary-bg-color);
+    border: 0;
+    border-radius: 4px;
+    transition: color var(--tr-dtf), background-color var(--tr-dtf), box-shadow var(--tr-dtf); 
+    &:hover,
+    &:focus {
+        color: var(--hero-color);
+        background-color: var(--accent-bg-color);
+        box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+    }
+}
+.projects-link {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.projects-subtitle {
+    margin-bottom: 4px;
+    @include font(null, 18px, 2);
+    letter-spacing: 0.06em;
+}
+.projects-text {
+    @include font(null, 16px, 1.88);
+    color: var(--main-text-color);
+}
+.projects-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+.projects-card {
+    width: 100%;
+    flex-grow: 1;
+    padding: 20px 24px;
+    border: 1px solid var(--projects-border-color);
+    border-top: 0;  
+}
+.projects-item {
+    width: 100%;
+    align-items: center;
+    @include tablet{
+        width: calc((100% - 30px) / 2);
+
+    }
+    @include desktop {
+        width: calc((100% - 60px) / 3);
+    }
+    transition: box-shadow var(--tr-dtf);
+    &:hover,
+    &:focus {
+        box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+    }
+}
+
+.projects-overlay {
+    position: relative;
+    overflow: hidden;
+}
+.projects-about {
+    position: absolute;
+    height: 100%;
+    padding: 63px 24px;
+    top: 0;
+    @include font(null, 18px, 1.56);
+    color: var(--hero-color); 
+    background-color: rgba(33, 150, 243, 0.9);
+    transform: translateY(100%);
+    transition: transform var(--tr-dtf);
+    .projects-link:hover &,
+    .projects-link:focus & {
+        transform: translateY(0);
+        transition: transform var(--tr-dtf);
+    }
+}
