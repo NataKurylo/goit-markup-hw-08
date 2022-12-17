@@ -10,10 +10,14 @@
 }
 
 .header__logo {
-    padding: 24px 0 25px;
+    padding: 16px;
     margin-right: 88px;
+    @include tablet {
+            padding: 26px 0;
+        }
     @include desktop {
         margin-right: 93px;
+        padding: 24px 0 25px;
     }
 }
 
@@ -206,6 +210,23 @@ transition: transform 350ms linear;
     @include desktop {
         flex-direction: row;
         gap: 40px;
+    }
+}
+
+.contacts__mail {
+    width: 14px;
+    height: 10px;
+    @include desktop {
+            width: 16px;
+            height: 12px;
+    }
+}
+.contacts__tel {
+    width: 10px;
+    height: 14px;
+    @include desktop {
+        width: 10px;
+        height: 16px;
     }
 }
 
